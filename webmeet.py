@@ -34,7 +34,8 @@ def save_chat(room, chat_data):
     path = os.path.join(CHAT_DIR, f"chat_{room}.json")
     with open(path, "w") as f:
         json.dump(chat_data, f, indent=2)
- st.set_page_config(page_title="Webミーティング", layout="wide")
+
+st.set_page_config(page_title="Webミーティング", layout="wide")
 def app():
    
     st.header("📡 Webミーティング")
