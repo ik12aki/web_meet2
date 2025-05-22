@@ -36,7 +36,7 @@ def save_chat(room, chat_data):
 def app():
    
     st.header("📡 Webミーティング")
-    st.title("🎥 Web会議（Jitsi）")
+    st.title("🎥 Webミーティング") #（Jitsi）
 
     room = st.text_input("会議ルーム名を入力:", "my-meeting-room")
 
