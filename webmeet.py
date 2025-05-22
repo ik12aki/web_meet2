@@ -1,6 +1,6 @@
 # import streamlit as st
 
-st.set_page_config(page_title="Webミーティング", layout="wide")
+# st.set_page_config(page_title="Webミーティング", layout="wide")
 
 # def app():
 #     st.header("📡 Webミーティング")
