@@ -67,15 +67,15 @@ def app():
 
     username = st.text_input("あなたの名前", value="guest")
 
-    chat_history = load_chat(room_name)
-
+    chat_history = load_chat(room)
+    
     # 表示：過去のチャット
     for msg in chat_history[-20:]:  # 直近20件
         st.markdown(f"**{msg['user']}** ({msg['time']}): {msg['message']}")
-
+    
     # 入力欄
     new_msg = st.text_input("メッセージを入力", key="chat_input")
-
+    
     if st.button("送信"):
         if new_msg.strip():
             chat_history.append({
@@ -83,5 +83,6 @@ def app():
                 "message": new_msg.strip(),
                 "time": datetime.now().strftime("%H:%M:%S")
             })
-            save_chat(room_name, chat_history)
+            save_chat(room, chat_history)
             st.rerun()
+
