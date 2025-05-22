@@ -40,13 +40,20 @@ def app():
 
     room = st.text_input("会議ルーム名を入力:", "my-meeting-room")
 
+    # if room:
+    #     st.components.v1.html(f"""
+    #         <iframe src="https://meet.jit.si/{room}"
+    #                 allow="camera; microphone; fullscreen; display-capture"
+    #                 style="height: 1000px; width: 100%; border: 0px;"></iframe>
+    #     """, height=600)
     if room:
+        iframe_height = 950
         st.components.v1.html(f"""
             <iframe src="https://meet.jit.si/{room}"
                     allow="camera; microphone; fullscreen; display-capture"
-                    style="height: 1000px; width: 100%; border: 0px;"></iframe>
-        """, height=600)
-        
+                    style="height: {iframe_height}px; width: 100%; border: 0px;"></iframe>
+        """, height=iframe_height)
+
     # --- お絵かきキャンバス ---
     st.subheader("🖌️ ホワイトボード（描画）")
     canvas_result = st_canvas(
