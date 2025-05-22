@@ -44,7 +44,7 @@ def app():
         st.components.v1.html(f"""
             <iframe src="https://meet.jit.si/{room}"
                     allow="camera; microphone; fullscreen; display-capture"
-                    style="height: 1000px; width: 100%; border: 0px;"></iframe>
+                    style="height: 800px; width: 100%; border: 0px;"></iframe>
         """, height=600)
         
     # --- お絵かきキャンバス ---
