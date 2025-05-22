@@ -62,7 +62,8 @@ def app():
 
     # 描画がある場合に表示
     if canvas_result.image_data is not None:
-        st.image(canvas_result.image_data, caption="現在のホワイトボード", use_column_width=True)
+        st.image(canvas_result.image_data, caption="現在のホワイトボード", use_container_width=True)
+
 
     # 消去ボタン（再読み込みでキャンバスリセット）
     if st.button("🧹 ホワイトボードをクリア"):
