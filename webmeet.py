@@ -67,7 +67,7 @@ def app():
 
     # 消去ボタン（再読み込みでキャンバスリセット）
     if st.button("🧹 ホワイトボードをクリア"):
-        st.experimental_rerun()
+        st.rerun()
 
     
     # # --- チャット機能 ---
