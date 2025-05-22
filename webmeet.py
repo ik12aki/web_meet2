@@ -65,9 +65,11 @@ def app():
         st.image(canvas_result.image_data, caption="現在のホワイトボード", use_container_width=True)
 
 
-    # 消去ボタン（再読み込みでキャンバスリセット）
     if st.button("🧹 ホワイトボードをクリア"):
+        if "canvas" in st.session_state:
+            del st.session_state["canvas"]  # セッション状態から削除
         st.rerun()
+
 
     
     # # --- チャット機能 ---
