@@ -15,6 +15,16 @@
 #                     style="height: 600px; width: 100%; border: 0px;"></iframe>
 #         """, height=600)
 
+    # # 会議ルーム名入力
+    # room_name = st.text_input("会議ルーム名（英数字推奨）", value="my-room")
+
+    # # Google Meetの案内
+    # if st.button("🔗 Google Meetを開く"):
+    #     st.markdown(f"👉 [Google Meetを開く](https://meet.google.com/new)", unsafe_allow_html=True)
+    #     st.info("Google Meetの新規会議が開きます。ルーム名はメンバーで共有してください。")
+
+    # st.markdown("---")
+
 import streamlit as st
 import os
 import json
@@ -41,17 +51,16 @@ def save_chat(room, chat_data):
 def app():
    
     st.header("📡 Webミーティング")
-    st.title("🎥 Google Meet + チャット")
+    st.title("🎥 Web会議（Jitsi）")
 
-    # 会議ルーム名入力
-    room_name = st.text_input("会議ルーム名（英数字推奨）", value="my-room")
+    room = st.text_input("会議ルーム名を入力:", "my-meeting-room")
 
-    # Google Meetの案内
-    if st.button("🔗 Google Meetを開く"):
-        st.markdown(f"👉 [Google Meetを開く](https://meet.google.com/new)", unsafe_allow_html=True)
-        st.info("Google Meetの新規会議が開きます。ルーム名はメンバーで共有してください。")
-
-    st.markdown("---")
+    if room:
+        st.components.v1.html(f"""
+            <iframe src="https://meet.jit.si/{room}"
+                    allow="camera; microphone; fullscreen; display-capture"
+                    style="height: 600px; width: 100%; border: 0px;"></iframe>
+        """, height=600)
 
     # --- チャット機能 ---
     st.subheader("💬 ルームチャット")
