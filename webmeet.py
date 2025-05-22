@@ -38,7 +38,7 @@ def app():
     st.header("📡 Webミーティング")
     st.title("🎥 Web会議（Jitsi）")
 
-    # room = st.text_input("会議ルーム名を入力:", "my-meeting-room")
+    room = st.text_input("会議ルーム名を入力:", "my-meeting-room")
 
     if room:
         iframe_height = 950
