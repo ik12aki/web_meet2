@@ -61,8 +61,8 @@ def app():
         stroke_width=stroke_width,            # ✏️ ペンの太さ
         stroke_color=stroke_color,            # ✏️ ペンの色
         background_color="#ffffff",           # 背景色
-        height=400,
-        width=800,
+        height=600,
+        width=1200,
         drawing_mode="freedraw",
         key="canvas"
     )
