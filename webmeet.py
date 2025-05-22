@@ -38,14 +38,8 @@ def app():
     st.header("📡 Webミーティング")
     st.title("🎥 Web会議（Jitsi）")
 
-    room = st.text_input("会議ルーム名を入力:", "my-meeting-room")
+    # room = st.text_input("会議ルーム名を入力:", "my-meeting-room")
 
-    # if room:
-    #     st.components.v1.html(f"""
-    #         <iframe src="https://meet.jit.si/{room}"
-    #                 allow="camera; microphone; fullscreen; display-capture"
-    #                 style="height: 1000px; width: 100%; border: 0px;"></iframe>
-    #     """, height=600)
     if room:
         iframe_height = 950
         st.components.v1.html(f"""
@@ -61,8 +55,8 @@ def app():
         stroke_width=3,
         stroke_color="#000000",
         background_color="#ffffff",
-        height=300,
-        width=800,
+        height=1000,
+        width=1000,
         drawing_mode="freedraw",
         key="canvas"
     )
