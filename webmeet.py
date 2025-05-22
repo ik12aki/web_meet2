@@ -48,28 +48,35 @@ def app():
                     style="height: {iframe_height}px; width: 100%; border: 0px;"></iframe>
         """, height=iframe_height)
 
-    # --- お絵かきキャンバス ---
+    # --- お絵かきキャンバス --- 
     st.subheader("🖌️ ホワイトボード（描画）")
+    
+    # 🎨 ペンの設定
+    stroke_color = st.color_picker("ペンの色を選択", "#000000")
+    stroke_width = st.slider("ペンの太さ", 1, 25, 3)
+    
+    # 🧼 描画キャンバス
     canvas_result = st_canvas(
-        fill_color="rgba(255, 165, 0, 0.3)",  # オレンジ半透明
-        stroke_width=3,
-        stroke_color="#000000",
-        background_color="#ffffff",
-        height=600,
-        width=1500,
+        fill_color="rgba(255, 165, 0, 0.3)",  # 塗りつぶし色（使わない場合でも必要）
+        stroke_width=stroke_width,            # ✏️ ペンの太さ
+        stroke_color=stroke_color,            # ✏️ ペンの色
+        background_color="#ffffff",           # 背景色
+        height=400,
+        width=800,
         drawing_mode="freedraw",
         key="canvas"
     )
-
-    # 描画がある場合に表示
+    
+    # 🖼️ 描画結果を表示
     if canvas_result.image_data is not None:
         st.image(canvas_result.image_data, caption="現在のホワイトボード", use_container_width=True)
-
-
+    
+    # 🧹 ホワイトボードをクリア
     if st.button("🧹 ホワイトボードをクリア"):
         if "canvas" in st.session_state:
-            del st.session_state["canvas"]  # セッション状態から削除
+            del st.session_state["canvas"]
         st.rerun()
+
 
 
     
