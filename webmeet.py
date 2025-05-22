@@ -13,6 +13,8 @@ import os
 import json
 import uuid
 from datetime import datetime
+from streamlit_drawable_canvas import st_canvas
+import os
 
 CHAT_DIR = "data/chats"
 os.makedirs(CHAT_DIR, exist_ok=True)
