@@ -55,8 +55,8 @@ def app():
         stroke_width=3,
         stroke_color="#000000",
         background_color="#ffffff",
-        height=800,
-        width=1200,
+        height=600,
+        width=1500,
         drawing_mode="freedraw",
         key="canvas"
     )
