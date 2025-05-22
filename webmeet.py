@@ -62,7 +62,7 @@ def app():
         stroke_color=stroke_color,            # ✏️ ペンの色
         background_color="#ffffff",           # 背景色
         height=600,
-        width=1200,
+        width=1300,
         drawing_mode="freedraw",
         key="canvas"
     )
