@@ -8,7 +8,8 @@ st.set_page_config(page_title="WebMeeting App", layout="wide")
 # ユーザー認証設定
 USER_CREDENTIALS = {
     "aki": "pass1",
-    "aaa": "pass2"
+    "kubo": "pass2",
+    "ikuta":"pass3",
 }
 
 # ログイン処理
